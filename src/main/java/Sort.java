@@ -1,9 +1,10 @@
 import java.util.Collections;
+import java.util.List;
 
 public class Sort {
     GamesDatabes gd=new GamesDatabes();
-    public void sortType(String type){
-        gd.transferGamesBase();
+    public List<Games> sortType(String type){
+        //gd.transferGamesBase();
         switch (type){
             case "1":
                 GradeComparator gc=new GradeComparator();
@@ -25,7 +26,7 @@ public class Sort {
 
         }
 
-    }
+    return gd.base();}
 
 
 }

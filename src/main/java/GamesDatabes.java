@@ -25,36 +25,35 @@ public class GamesDatabes {
         connection.close();
     return gamesSQL;}
 
-    public void transferGamesBase() {
-        try {
-            games = gamesSQL();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
     public List<Games> base(){
+        if(games.size()<=0)
+        {
+            try {
+                games = gamesSQL();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
         return games; }
 
     public void showBase(){
-        for (Games game : games) {
+        for (Games game : base()) {
             System.out.println(game);
         }
 
     }
 
-    public void showGrade(double grade){
-        for (Games games1 :  games) {
+    public List<Games> showGrade(double grade){
+        List<Games>gradeList=new ArrayList<>();
+        for (Games games1 :  base()) {
             if(games1.getGrade()>=grade){
+                gradeList.add(games1);
                 System.out.println(games1.toString());
             }
         }
-    }
-    public void sort(){
-        GradeComparator gc=new GradeComparator();
-        Collections.sort(games,gc);
-    }
+    return gradeList;}
+
 
 }
