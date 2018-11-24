@@ -1,0 +1,34 @@
+create database computer_games;
+
+create table computer_games.games (
+Id int auto_increment PRIMARY KEY,
+Nazwa varchar(50) not null,
+typ varchar(50) not null,
+czas_gry int (4),
+klas_wiek int (2),
+ocena double
+);
+
+insert into computer_games.games (Nazwa, typ, czas_gry, klas_wiek, ocena)
+values
+('Wiedzmin 3: Dziki Gon','przygodowa',3000,15,4.9);
+
+insert into computer_games.games (Nazwa, typ, czas_gry, klas_wiek, ocena)
+values
+('Torment: Tides of Numenera', 'przygodowa',300,13,3.7);
+
+insert into computer_games.games(Nazwa, typ, czas_gry, klas_wiek, ocena)
+values
+('STAR WARS™ Episode I: Racer', 'wyścigowa',100,7,4.5);
+
+insert into computer_games.games(Nazwa, typ, czas_gry, klas_wiek, ocena)
+values
+('Heroes of Might and Magic® 3: Complete','strategiczna',500,7,4.8);
+
+insert into computer_games.games(Nazwa, typ, czas_gry, klas_wiek, ocena)
+values
+('Ultimate DOOM, The','strzelanka',120,13,4.9);
+
+insert into computer_games.games(Nazwa, typ, czas_gry, klas_wiek, ocena)
+values
+('X4: Foundations Collectors Edition','symulator',135,15,3);
